@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="title">Calculadora</ion-title>
+    <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+</ion-toolbar>
+</ion-header>
+<ion-content class="padding">
+<div class="full">
+<div class="calculator"><input type="text" [(ngModel)]="screen"></div>
+<div class="container">
+  <b>
+    <h1>
+      <input type="button" (click)='inputValue("1")' value="1">
+      <input type="button" (click)='inputValue("2")' value="2">
+      <input type="button" (click)='inputValue("3")' value="3">
+      <input type="button" (click)='condition("+")' value="+">
+    </h1>
+    <h1>
+      <input type="button" (click)='inputValue("4")' value="4">
+      <input type="button" (click)='inputValue("5")' value="5">
+      <input type="button" (click)='inputValue("6")' value="6">
+      <input type="button" (click)='condition("-")' value="-">
+    </h1>
+    <h1>
+      <input type="button" (click)='inputValue("7")' value="7">
+      <input type="button" (click)='inputValue("8")' value="8">
+      <input type="button" (click)='inputValue("9")' value="9">
+      <input type="button" (click)='condition("*")' value="*">
+    </h1>
+  <h1>
+    <input type="button" (click)='inputValue("0")' value="0">
+    <input type="button" (click)='condition("/")' value="/">
+    <input type="button" (click)='result()' value="=">
+    <input type="button" (click)="clear()" value="C">
+  </h1>
+  </b>
+</div>
+</div>
+<div id="containerbut">
+</div>
+</ion-content>

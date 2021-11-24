@@ -1,0 +1,18 @@
+<ion-card>
+
+  <ion-item class="estiloCard">
+    <ion-icon name="{{icone}}" color="{{cor}}" slot="start" size="large"></ion-icon>
+    <ion-label>{{titulo}}</ion-label>
+  </ion-item>
+
+  <ion-card-content>
+
+    <ion-item>
+      <ion-badge color="{{cor}}" size="large" slot="start" title="Quantidade total"> {{num}}</ion-badge>
+      <ion-text color="{{cor}}">
+        <h5>Valor Total : {{valor|currency : 'BRL':true}}</h5>
+      </ion-text>
+    </ion-item>
+
+  </ion-card-content>
+</ion-card>

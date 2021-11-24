@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<img src="../assets/icon/pagar.jpg" alt="Voltar" title="voltar" (click)="voltar()">
+<h3>Cadastro de Contas</h3>
+<ion-content>
+  <form [formGroup]="contasForm" (submit)="registrarConta()">
+    <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" formControlName="dt_criacao" hidden></ion-datetime>
+    <ion-list class="radioStatus">
+      <ion-radio-group formControlName="tipoConta">
+        <ion-list-header>
+          <ion-label>Tipo da Conta</ion-label>
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>Pagar</ion-label>
+          <ion-radio slot="start"  value="pagar"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Receber</ion-label>
+          <ion-radio slot="start" value="receber" checked></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+    <ion-item>
+      <ion-label>Data de Vencimento</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" formControlName="data" 
+      monthNames="Janeiro, Feveriero, Março, Abril, Maio, Junho, Julho, Agosto, Setempro, Outubro, Novembro, Dezembro"
+       done-text="OK" cancel-text="Cancelar"></ion-datetime>
+    </ion-item>
+    <div class="input-group input-group-lg mt-3 bg-black">
+      <span class="input-group-text bg-white" id="inputGroup-sizing-lg">
+        <ion-icon name="person-circle-outline" color="if" slot="start"></ion-icon>
+      </span>
+      <ion-input formControlName="parceiro" type="text" class="form-control" placeholder="Parceiro Comercial"
+        autfocus="true"></ion-input>
+    </div>
+
+    <div class="input-group input-group-lg mb-3 mt-3">
+      <span class="input-group-text bg-black" id="inputGroup-sizing-lg">
+        <ion-icon name="document-text-outline" color="if" slot="start"></ion-icon>
+      </span>
+      <ion-input formControlName="descricao" type="text" class="form-control" placeholder="Descrição da Conta"
+        autfocus="true"></ion-input>
+    </div>
+
+    <div class="input-group input-group-lg mt-3 mb-3">
+      <span class="input-group-text bg-black" id="inputGroup-sizing-lg">
+        <ion-icon name="logo-usd" color="if" slot="start"></ion-icon>
+      </span>
+      <ion-input formControlName="valor" type="number" class="form-control" placeholder="Valor da Conta"></ion-input>
+    </div>
+
+    <ion-list class="radioStatus">
+      <ion-radio-group formControlName="status">
+        <ion-list-header>
+          <ion-label>Status da Conta</ion-label>
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>Pago</ion-label>
+          <ion-radio slot="start" value="pago"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>A pagar</ion-label>
+          <ion-radio slot="start" value="n_pago" checked></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+    <div class="d-grid gap-2">
+      <button type="submit" [disabled]="contasForm.invalid" class="btn btn-outline-success btn-lg">Salvar</button>
+    </div>
+  </form>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Contas a {{tipo}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-list>
+    <ion-item *ngFor="let conta of listaContas">
+      <ion-label>
+
+        <h2>Parceiro : {{conta.parceiro}}</h2>
+        <p>Descrição : {{conta.descricao}}</p>
+        <h2>Valor: R$ {{conta.valor}}</h2>
+        <h5>Data Vencimento : {{ conta.data | date:"dd/MM/yyyy" }}</h5>
+        <p>Status da conta : {{conta.status}}</p>
+        <hr>
+
+      </ion-label>
+      <ion-icon name="trash" slot="end" (click)="remove(conta)" class="excluir"></ion-icon>
+      <ion-icon name="create" slot="end" (click)="editar(conta)" class="editar"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+  <ion-footer class="footer">
+    <ion-toolbar>
+      <ion-button shape="round" size="large" fill="outline" [routerLink]="['/contas/cadastro']" routerLinkActive="router-link-active" color="success" >
+        Cadastrar Conta
+        <ion-icon slot="end" name="logo-xbox"></ion-icon>
+      </ion-button>
+    </ion-toolbar>
+  </ion-footer>

@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-row>
+    <ion-col>
+      <img src="../assets/icon/iflogo2.png" class="img-title" width="35" height="35">
+    </ion-col>
+    <ion-col>
+      <ion-title size="large" class="logout" (click)="logout()">Logout</ion-title>
+    </ion-col>
+  </ion-row>
+</ion-header>
+
+<ion-content class="padding">
+
+  <ion-item class="estilodata">
+    <ion-icon name="search" slot="end" size="larger"></ion-icon>
+    <ion-label position="center">Pesquisar Mês/Ano da Conta</ion-label>
+    <ion-datetime display-format="MM YYYY" pickerFormat="MMMM YYYY" min="2021-01-01" max="2050-12-31" monthNames="Janeiro, Feveriero, Março, Abril, Maio, Junho, Julho, Agosto, Setempro, Outubro, Novembro, Dezembro"
+    done-text="OK" cancel-text="Cancelar" [(ngModel)]="date" (ngModelChange)="atualizaConta()"></ion-datetime>
+  </ion-item>
+
+  <dash-card valor="{{conta.receber.valor}}" num="{{conta.receber.num}}" tipo="receber"></dash-card>
+
+  <dash-card valor="{{conta.pagar.valor}}" num="{{conta.pagar.num}}" tipo="pagar"></dash-card>
+
+  <dash-card valor="{{conta.saldo.valor}}" num="{{conta.saldo.num}}" tipo="saldo"></dash-card>
+
+</ion-content>
+
+<div id="containerbut">
+  <div class="d-grid gap-2 mt-10 pd-5">
+    <button [routerLink]="['/contas/pagar']" routerLinkActive="router-link-active"
+      class="btn btn-outline-primary btn-lg">Contas a Pagar</button>
+  </div>
+</div>
+<div id="containerbut">
+  <div class="d-grid gap-2 mt-10">
+    <button [routerLink]="['/contas/receber']" routerLinkActive="router-link-active"
+      class="btn btn-outline-primary btn-lg">Contas a Receber</button>
+  </div>
+  <div id="containerbut">
+    <div class="d-grid gap-2 mt-10 pd-5">
+      <button [routerLink]="['/calculadora']" routerLinkActive="router-link-active"
+        class="btn btn-outline-primary btn-lg">Calculadora</button>
+    </div>
+  </div>
+</div>
+<ion-footer class="footer">
+  <ion-toolbar>
+    <ion-title size="small">Desenvolvido por Rafael Maldivas</ion-title>
+    <a href="https://github.com/RafaelMaldivas" style="text-decoration: none;" target="_blank">
+      <ion-icon name="logo-octocat" slot="end"></ion-icon>
+    </a>
+    <a href="https://www.instagram.com/rafaelmaldivas/" style="text-decoration: none;" target="_blank">
+      <ion-icon name="logo-instagram" slot="end"></ion-icon>
+    </a>
+  </ion-toolbar>
+</ion-footer>

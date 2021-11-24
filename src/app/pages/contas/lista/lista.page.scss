@@ -1,0 +1,29 @@
+@import 'bootstrap';
+
+p{
+    color: red;
+    text-justify: newspaper;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
+.editar:hover{
+    border: solid white 1pt;
+    color: rgb(101, 250, 63);
+    display: inline;
+    flex-wrap: wrap;
+  
+
+}
+
+.excluir:hover{
+    border: solid white 1pt;
+    color: red;
+}
+
+.adicionar{
+    margin-left: 620pt;
+    padding: auto;
+    margin-bottom: 15pt;
+}
